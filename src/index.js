@@ -5,11 +5,20 @@ import { store } from "./store/store";
 import { Provider } from "react-redux";
 import StarWars from "./components/StarWars/StarWars";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import ProtectedRoute from "./components/ProtectedRoute/ProtectedRoute";
 
 const router = createBrowserRouter([
     {
         path: "/",
-        element: <StarWars />,
+        element: <div>registration</div>,
+    },
+    {
+        path: "/people",
+        element: (
+            <ProtectedRoute>
+                <StarWars />
+            </ProtectedRoute>
+        ),
     },
 ]);
 
