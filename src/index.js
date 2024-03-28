@@ -6,11 +6,15 @@ import { Provider } from "react-redux";
 import StarWars from "./components/StarWars/StarWars";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import ProtectedRoute from "./components/ProtectedRoute/ProtectedRoute";
+import SignIn from "./components/pages/SignIn";
+import "./index.css";
+
+const handleSignIn = () => {};
 
 const router = createBrowserRouter([
     {
         path: "/",
-        element: <div>registration</div>,
+        element: <SignIn handleSignIn={handleSignIn} />,
     },
     {
         path: "/people",
